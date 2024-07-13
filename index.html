@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--animate  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="icon" href="images/logo.png">
+    <title>Yummy</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <section class="main-side">
+      <div class="side-nav text-white bg-black">
+        
+          <ul
+            class="d-flex flex-column gap-4 fs-5 text-white  animate__animated animate__fadeInBottomLeft"
+          >
+            <li><a class="text-white" id="Search" href="#">Search</a></li>
+            <li>
+              <a class="text-white" id="category" href="#">Categories</a>
+            </li>
+            <li><a class="text-white" id="area" href="#">Area</a></li>
+            <li>
+              <a class="text-white" id="ingredients" href="#">Ingredients</a>
+            </li>
+            <li>
+              <a class="text-white" id="Contact" href="#">Contact Us</a>
+            </li>
+          </ul>
+       
+        <div class="copyrights">
+          <div class="rights-social">
+            <a href="#"><i class="fa-brands fa-facebook-f text-light"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter text-light"></i></a>
+            <a href="#"><i class="fa-solid fa-globe text-light"></i></a>
+          </div>
+          <p class="pt-3">
+            Copyright © 2024 All Rights <br />
+            Reserved.
+          </p>
+        </div>
+      </div>
+
+      <nav class="text-center bg-white py-4 px-2">
+        <div class="nav-logo">
+          <img
+            src="./Images/logo.png"
+            class="w-100"
+            alt="logo"
+            loading="lazy"
+          />
+        </div>
+        <div class="nav-menu">
+          <i class="fa-solid fa-align-justify text-2xl cursor-pointer"></i>
+        </div>
+        <div class="nav-social d-flex flex-column">
+          <i class="fa-solid fa-globe py-2"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </nav>
+    </section>
+    <!-- <div class="my-nav main-side bg-info">
+      <div class="side-nav nav-links">
+        
+          <div class="links">
+            <ul
+              class="d-flex flex-column gap-4 fs-5 text-white d-none animate__animated"
+            >
+              <li><a class="text-white" id="Search" href="#">Search</a></li>
+              <li>
+                <a class="text-white" id="category" href="#">Categories</a>
+              </li>
+              <li><a class="text-white" id="area" href="#">Area</a></li>
+              <li>
+                <a class="text-white" id="ingredients" href="#">Ingredients</a>
+              </li>
+              <li>
+                <a class="text-white" id="Contact" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="text-white">
+            <div class="icons">
+              <i class="fa-brands fa-facebook me-2"></i>
+              <i class="fa-brands fa-twitter me-2"></i>
+              <i class="fa-solid fa-globe me-2"></i>
+            </div>
+            <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+          </div>
+        
+      </div>
+      <div class="r-nav bg-white text-black nav-icons">
+        <div
+          class="d-flex flex-column justify-content-between align-items-baseline vh-100 px-2 py-5"
+        >
+          <img src="images/logo.png" class="w-100" alt="logo" />
+          <i class="fa-solid fa-bars fs-4 open"></i>
+          <i class="fa-solid fa-x d-none fs-4 exit"></i>
+
+          <div class="icons">
+            <i class="fa-solid fa-globe d-block my-2"></i>
+            <i class="fa-solid fa-share-nodes d-block my-2"></i>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container mt-4 render-home">
+      <div class="home">
+        <div class="row g-4"></div>
+      </div>
+    </div>
+
+    <div class="container render-Area">
+      <div class="Area row g-4"></div>
+    </div>
+
+    <div class="container render-ingredients">
+      <div class="ingredients row"></div>
+    </div>
+    <div class="container Contact-Us">
+      <form action="">
+        <div
+          class="contact mt-5 row justify-content-center align-content-center vh-100 d-none"
+        >
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^[a-zA-z]{2,8}$/,'msgFullName')"
+              class="form-control form-control-md my-2"
+              type="text"
+              placeholder="Enter Your Name"
+            />
+            <div id="msgFullName" class="alert bg-white text-danger d-none">
+              Special characters and numbers not allowed
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,'msgEmail')"
+              class="form-control form-control-md my-2"
+              type="email"
+              placeholder="Enter Your Email"
+            />
+            <div id="msgEmail" class="alert bg-white text-danger d-none">
+              Email not valid *exemple@yyy.zzz
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^(02)?01(0|1|2|5)[0-9]{8}$/)"
+              class="form-control form-control-md my-2"
+              type="number"
+              placeholder="Enter Your Phone"
+            />
+            <div id="msgPhone" class="alert bg-white text-danger d-none">
+              Enter valid Phone Number
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^[1-9][0-9]$/,'msgAge')"
+              class="form-control form-control-md my-2"
+              type="number"
+              placeholder="Enter Your Age"
+            />
+            <div id="msgAge" class="alert bg-white text-danger d-none">
+              10 to 99
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,'msgPassword')"
+              class="form-control form-control-md my-2"
+              type="password"
+              placeholder="Enter Your Password"
+            />
+            <div id="msgPassword" class="alert bg-white text-danger d-none">
+              Enter valid password *Minimum eight characters, at least one
+              letter and one number:*
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input
+              oninput="validation(this,/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,'msgRepassword')"
+              class="form-control form-control-md my-2"
+              type="password"
+              placeholder="Repassword"
+            />
+            <div id="msgRepassword" class="alert bg-white text-danger d-none">
+              Enter valid repassword
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button
+              type="submit"
+              class="ok btn btn-outline-danger d-block m-auto mt-3"
+              disabled
+              ali
+            >
+              submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="container d-none render-search">
+      <div class="search mt-5 pt-3">
+        <div class="interyData d-flex gap-4 justify-content-center">
+          <input
+            id="myInput"
+            class="form-control form-control-md my-2 Name bg-transparent text-white"
+            type="text"
+            placeholder="Search By Name"
+          />
+          <input
+            id="myInput"
+            class="form-control form-control-md my-2 Letter bg-transparent text-white"
+            type="text"
+            placeholder="Search By First Letter"
+            maxlength="1"
+          />
+        </div>
+      </div>
+      <div class="data row g-4"></div>
+    </div>
+
+    <div class="loading d-none position-fixed top-50 start-50 z-3 vh-100">
+      <span class="loader d-block"></span>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
