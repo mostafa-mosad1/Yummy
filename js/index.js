@@ -21,7 +21,6 @@ function sideClose() {
     700,
     function () {
       $("ul").toggleClass("animate__fadeInBottomLeft");
-     
     }
   );
   $(".side-nav").toggleClass("active");
@@ -31,7 +30,7 @@ function sideClose() {
 
 // * =============> renderHome ===============>
 
-// loader.classList.remove("d-none");
+loader.classList.remove("d-none");
 
 async function renderHome() {
   let data = await fetchApi(
@@ -105,11 +104,13 @@ async function renderDetails(id) {
       
     </div>
     <h2 class="mb-2">Tags:</h2>
-    <div class="d-flex tags">
+    <div class="d-flex tags ">
    ${tagApi}
     </div>
+<div class="mb-4 mt-2">
     <button class="btn btn-success  me-2" > <a class="text-white"  target="_blank" href="${meals[0].strSource}">Source</a> </button>
     <button class="btn btn-danger " > <a class="text-white"  target="_blank" href="${meals[0].strYoutube}">Youtue</a>  </button>
+</div>
   </div>
 </div>
       `;
@@ -210,8 +211,10 @@ async function renderArea() {
   let { meals } = await fetchApi(
     `https://www.themealdb.com/api/json/v1/1/list.php?a=list`
   );
+  let max = meals.splice(1, 20);
+
   let cartaina = ``;
-  meals.forEach((meal) => {
+  max.forEach((meal) => {
     cartaina += `
     <div data-name="${meal.strArea}" class=" area col-sm-4 col-md-3 text-center ">
     <i class="fa-solid fa-house-laptop "></i>
@@ -238,6 +241,7 @@ async function insideArea(countery) {
   let { meals } = await fetchApi(
     `https://www.themealdb.com/api/json/v1/1/filter.php?a=${countery}`
   );
+  ingredients.classList.add("d-none");
   let cartaina = renderDesign(meals);
   home.innerHTML = cartaina;
   loader.classList.add("d-none");
@@ -259,7 +263,6 @@ document.getElementById("ingredients").addEventListener("click", function (e) {
   sideClose();
   ingredients.classList.remove("d-none");
 
-  console.log("ingredients");
   renderIngredients();
 });
 
@@ -268,8 +271,9 @@ async function renderIngredients() {
   let { meals } = await fetchApi(
     `https://www.themealdb.com/api/json/v1/1/list.php?i=list`
   );
+  let max = meals.splice(1, 20);
   let cartaina = ``;
-  meals.forEach((meal) => {
+  max.forEach((meal) => {
     cartaina += `
     <div data-name="${meal.strIngredient}" class=" ingredient col-sm-4 col-md-3 text-center ">
     <i class="fa-solid fa-drumstick-bite fa-4x"></i>
@@ -370,6 +374,8 @@ document.getElementById("Search").addEventListener("click", function (e) {
   contact.classList.add("d-none");
   sideClose();
   render_search.classList.remove("d-none");
+  searchLetter.value=searchName.value=""
+  document.querySelector(".data").innerHTML=""
 });
 
 searchName.addEventListener("input", async function (e) {
@@ -463,4 +469,3 @@ function validation(input, reg, msgName) {
     return false;
   }
 }
-
