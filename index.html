@@ -1,200 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy | Gourmet Recipe Discovery & Culinary Hub</title>
+  <meta name="description" content="Discover delicious recipes, world cuisines, ingredients, and step-by-step cooking guides." />
+  
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
 
-    <!--animate  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+  <aside class="sidebar-wrapper" id="sidebarWrapper">
+    <div class="sidebar-nav bg-dark-glass" id="sidebarNav">
+      <div class="sidebar-content">
+        <div class="sidebar-header">
+          <div class="brand-tag">
+            <span class="pulse-dot"></span>
+            <span>Culinary Explorer</span>
+          </div>
+        </div>
 
-    <link rel="icon" href="images/logo.png" />
-    <title>Yummy</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <section class="main-side">
-      <div class="side-nav text-white bg-black">
-        <ul
-          class="d-flex flex-column gap-4 fs-5 text-white animate__animated animate__fadeInBottomLeft"
-        >
-          <li><a class="text-white" id="Search" href="#">Search</a></li>
-          <li>
-            <a class="text-white" id="category" href="#">Categories</a>
+        <ul class="nav-links-list">
+          <li style="--i: 1">
+            <a href="#" class="nav-link-item active" data-view="home">
+              <i class="fa-solid fa-compass"></i>
+              <span>Explore</span>
+            </a>
           </li>
-          <li><a class="text-white" id="area" href="#">Area</a></li>
-          <li>
-            <a class="text-white" id="ingredients" href="#">Ingredients</a>
+          <li style="--i: 2">
+            <a href="#" class="nav-link-item" data-view="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search Recipes</span>
+            </a>
           </li>
-          <li>
-            <a class="text-white" id="Contact" href="#">Contact Us</a>
+          <li style="--i: 3">
+            <a href="#" class="nav-link-item" data-view="categories">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>Categories</span>
+            </a>
+          </li>
+          <li style="--i: 4">
+            <a href="#" class="nav-link-item" data-view="area">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span>World Cuisines</span>
+            </a>
+          </li>
+          <li style="--i: 5">
+            <a href="#" class="nav-link-item" data-view="ingredients">
+              <i class="fa-solid fa-carrot"></i>
+              <span>Ingredients</span>
+            </a>
+          </li>
+          <li style="--i: 6">
+            <a href="#" class="nav-link-item" data-view="favorites">
+              <i class="fa-solid fa-heart"></i>
+              <span>My Favorites</span>
+              <span class="favorites-badge badge rounded-pill bg-danger ms-auto d-none" id="favBadge">0</span>
+            </a>
+          </li>
+          <li style="--i: 7">
+            <a href="#" class="nav-link-item" data-view="contact">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Contact Us</span>
+            </a>
           </li>
         </ul>
 
-        <div class="copyrights">
-          <div class="rights-social">
-            <a href="#"><i class="fa-brands fa-facebook-f text-light"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter text-light"></i></a>
-            <a href="#"><i class="fa-solid fa-globe text-light"></i></a>
+        <div class="sidebar-footer">
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           </div>
-          <p class="pt-3">
-            Copyright © 2024 All Rights <br />
-            Reserved.
-          </p>
+          <p class="copyright-text">Copyright &copy; 2026 Yummy Inc.<br>All rights reserved.</p>
         </div>
       </div>
+    </div>
 
-      <nav class="text-center bg-white py-4 px-2">
-        <div class="nav-logo">
-          <img src="images/logo.png" class="w-100" alt="logo" loading="lazy" />
-        </div>
-        <div class="nav-menu">
-          <i class="fa-solid fa-align-justify text-2xl cursor-pointer"></i>
-        </div>
-        <div class="nav-social d-flex flex-column">
-          <i class="fa-solid fa-globe py-2"></i>
-          <i class="fa-solid fa-share-nodes"></i>
-        </div>
-      </nav>
-    </section>
+    <!-- Mini Toggle Bar Dock -->
+    <div class="sidebar-dock">
+      <div class="dock-brand" id="dockBrandLogo" role="button" title="Back to Home">
+        <img src="images/logo.png" alt="Yummy Logo" class="dock-logo" />
+      </div>
+      
+      <button class="dock-toggle-btn" id="dockToggleBtn" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars-staggered" id="toggleIcon"></i>
+      </button>
 
-    <div class="container mt-4 render-home">
-      <div class="home">
-        <div class="row g-4"></div>
+      <div class="dock-actions">
+        <button class="dock-icon-btn" id="quickFavBtn" title="Favorites" data-view="favorites">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+        <button class="dock-icon-btn" id="quickSearchBtn" title="Search" data-view="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
     </div>
+  </aside>
 
-    <div class="container render-Area">
-      <div class="Area row g-4"></div>
-    </div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-    <div class="container render-ingredients">
-      <div class="ingredients row"></div>
-    </div>
-    <div class="container Contact-Us">
-      <form action="">
-        <div
-          class="contact mt-5 row justify-content-center align-content-center vh-100 d-none"
-        >
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^[a-zA-z]{2,8}$/,'msgFullName')"
-              class="form-control form-control-md my-2"
-              type="text"
-              placeholder="Enter Your Name"
-            />
-            <div id="msgFullName" class="alert bg-white text-danger d-none">
-              Special characters and numbers not allowed
-            </div>
+  <main class="main-wrapper" id="mainWrapper">
+    <header class="top-header">
+      <div class="container-fluid px-lg-5 px-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-3">
+            <h1 class="brand-title m-0" id="headerBrandTitle" role="button" title="Back to Home">
+              <span class="text-gradient">Yummy</span><span class="dot">.</span>
+            </h1>
+            <span class="page-subtitle d-none d-md-inline-block" id="pageSubtitle">Explore Delicious Meals</span>
           </div>
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,'msgEmail')"
-              class="form-control form-control-md my-2"
-              type="email"
-              placeholder="Enter Your Email"
-            />
-            <div id="msgEmail" class="alert bg-white text-danger d-none">
-              Email not valid *exemple@yyy.zzz
-            </div>
-          </div>
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^(02)?01(0|1|2|5)[0-9]{8}$/)"
-              class="form-control form-control-md my-2"
-              type="number"
-              placeholder="Enter Your Phone"
-            />
-            <div id="msgPhone" class="alert bg-white text-danger d-none">
-              Enter valid Phone Number
-            </div>
-          </div>
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^[1-9][0-9]$/,'msgAge')"
-              class="form-control form-control-md my-2"
-              type="number"
-              placeholder="Enter Your Age"
-            />
-            <div id="msgAge" class="alert bg-white text-danger d-none">
-              10 to 99
-            </div>
-          </div>
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,'msgPassword')"
-              class="form-control form-control-md my-2"
-              type="password"
-              placeholder="Enter Your Password"
-            />
-            <div id="msgPassword" class="alert bg-white text-danger d-none">
-              Enter valid password *Minimum eight characters, at least one
-              letter and one number:*
-            </div>
-          </div>
-          <div class="col-md-6">
-            <input
-              oninput="validation(this,/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,'msgRepassword')"
-              class="form-control form-control-md my-2"
-              type="password"
-              placeholder="Repassword"
-            />
-            <div id="msgRepassword" class="alert bg-white text-danger d-none">
-              Enter valid repassword
-            </div>
-          </div>
-          <div class="col-md-6">
-            <button
-              type="submit"
-              class="ok btn btn-outline-danger d-block m-auto mt-3"
-              disabled
-              ali
-            >
-              submit
+
+          <div class="top-actions d-flex align-items-center gap-3">
+            <button class="header-action-btn search-trigger" id="headerSearchBtn" title="Search Recipes">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="d-none d-sm-inline ms-2">Search...</span>
+            </button>
+            <button class="header-action-btn fav-trigger" id="headerFavBtn" title="Saved Favorites">
+              <i class="fa-solid fa-bookmark"></i>
+              <span class="fav-count-pill badge bg-danger ms-1 d-none" id="headerFavCount">0</span>
             </button>
           </div>
         </div>
-      </form>
-    </div>
-
-    <div class="container d-none render-search">
-      <div class="search mt-5 pt-3">
-        <div class="interyData d-flex gap-4 justify-content-center">
-          <input
-            id="myInput"
-            class="form-control form-control-md my-2 Name bg-transparent text-white"
-            type="text"
-            placeholder="Search By Name"
-          />
-          <input
-            id="myInput"
-            class="form-control form-control-md my-2 Letter bg-transparent text-white"
-            type="text"
-            placeholder="Search By First Letter"
-            maxlength="1"
-          />
-        </div>
       </div>
-      <div class="data row g-4"></div>
-    </div>
+    </header>
 
-    <div class="loading d-none position-fixed top-50 start-50 z-3 vh-100">
-      <span class="loader d-block"></span>
-    </div>
+    <div class="app-viewport container-fluid px-lg-5 px-3 py-4">
 
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/index.js"></script>
-  </body>
+      <section class="app-view active" id="view-home">
+        <div class="hero-banner mb-5" id="heroContainer">
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div>
+            <h2 class="section-title text-white">
+              <i class="fa-solid fa-fire text-amber me-2"></i>Trending Recipes
+            </h2>
+            <p class="section-desc">Hand-picked culinary inspirations updated daily</p>
+          </div>
+          <div class="filter-pills-wrapper" id="homeQuickFilters">
+          </div>
+        </div>
+
+        <div class="row g-4" id="homeMealsGrid">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-search">
+        <div class="search-hero-box mb-5">
+          <div class="text-center mb-4">
+            <h2 class="text-white fw-bold display-6">Find Your Next Recipe</h2>
+            <p class="text-muted">Search through thousands of gourmet recipes from across the globe</p>
+          </div>
+
+          <div class="row g-3 justify-content-center">
+            <div class="col-lg-6 col-md-8">
+              <div class="search-input-group">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input 
+                  type="text" 
+                  id="searchByNameInput" 
+                  class="search-input form-control" 
+                  placeholder="Search recipes by full meal name (e.g. Pasta, Pie, Beef)..." 
+                  autocomplete="off"
+                />
+                <button class="search-clear-btn d-none" id="clearSearchName" aria-label="Clear">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="search-input-group">
+                <i class="fa-solid fa-font search-icon"></i>
+                <input 
+                  type="text" 
+                  id="searchByLetterInput" 
+                  class="search-input form-control text-center" 
+                  placeholder="By Letter (e.g. A)" 
+                  maxlength="1"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="section-title text-white h4" id="searchResultsTitle">
+            <i class="fa-solid fa-sparkles text-amber me-2"></i>Search Results
+          </h3>
+          <span class="results-count text-muted" id="searchResultsCount"></span>
+        </div>
+
+        <div class="row g-4" id="searchResultsGrid">
+          <div class="col-12 text-center py-5 text-muted empty-state-box">
+            <i class="fa-solid fa-utensils fa-3x mb-3 text-amber opacity-50"></i>
+            <p class="fs-5">Start typing to search delicious recipes!</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-categories">
+        <div class="mb-4">
+          <h2 class="section-title text-white">
+            <i class="fa-solid fa-layer-group text-amber me-2"></i>Explore Categories
+          </h2>
+          <p class="section-desc">Browse through rich culinary categories from gourmet desserts to savory poultry</p>
+        </div>
+
+        <div class="row g-4" id="categoriesGrid">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-area">
+        <div class="mb-4">
+          <h2 class="section-title text-white">
+            <i class="fa-solid fa-earth-americas text-amber me-2"></i>World Cuisines
+          </h2>
+          <p class="section-desc">Discover authentic dishes from international traditions and culinary capitals</p>
+        </div>
+
+        <div class="row g-4" id="areasGrid">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-ingredients">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+          <div>
+            <h2 class="section-title text-white">
+              <i class="fa-solid fa-carrot text-amber me-2"></i>Fresh Ingredients
+            </h2>
+            <p class="section-desc">Find recipes based on your favorite pantry staples and raw ingredients</p>
+          </div>
+          <div class="ingredient-filter-box">
+            <input 
+              type="text" 
+              id="filterIngredientsInput" 
+              class="form-control form-control-sm search-input px-3 py-2" 
+              placeholder="Filter ingredients..." 
+            />
+          </div>
+        </div>
+
+        <div class="row g-4" id="ingredientsGrid">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-favorites">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="section-title text-white">
+              <i class="fa-solid fa-heart text-danger me-2"></i>Saved Recipes
+            </h2>
+            <p class="section-desc">Your curated collection of favorite dishes for quick cooking access</p>
+          </div>
+          <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="clearAllFavoritesBtn">
+            <i class="fa-solid fa-trash-can me-1"></i>Clear All
+          </button>
+        </div>
+
+        <div class="row g-4" id="favoritesGrid">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-details">
+        <div class="mb-3">
+          <button class="btn btn-glass-back rounded-pill px-4 py-2" id="backToPreviousBtn">
+            <i class="fa-solid fa-arrow-left me-2"></i>Back
+          </button>
+        </div>
+
+        <div id="mealDetailsContainer">
+        </div>
+      </section>
+
+      <section class="app-view d-none" id="view-contact">
+        <div class="row justify-content-center py-4">
+          <div class="col-xl-8 col-lg-10">
+            <div class="contact-card glass-panel p-lg-5 p-4">
+              <div class="text-center mb-4">
+                <div class="contact-badge-icon mb-3">
+                  <i class="fa-solid fa-paper-plane text-amber"></i>
+                </div>
+                <h2 class="text-white fw-bold mb-2">Get In Touch</h2>
+                <p class="text-white-50 fs-6">Have a question or feedback? Join our gourmet community</p>
+              </div>
+
+              <form id="contactForm" novalidate>
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="nameInput">Full Name</label>
+                      <div class="input-with-icon">
+                        <i class="fa-regular fa-user input-icon"></i>
+                        <input 
+                          type="text" 
+                          class="form-control modern-input" 
+                          id="nameInput" 
+                          placeholder="John Doe" 
+                          autocomplete="name"
+                        />
+                        <i class="fa-solid validation-status-icon"></i>
+                      </div>
+                      <div class="invalid-feedback-custom" id="nameError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Name must contain 3-30 letters and spaces only.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="emailInput">Email Address</label>
+                      <div class="input-with-icon">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input 
+                          type="email" 
+                          class="form-control modern-input" 
+                          id="emailInput" 
+                          placeholder="example@yummy.com" 
+                          autocomplete="email"
+                        />
+                        <i class="fa-solid validation-status-icon"></i>
+                      </div>
+                      <div class="invalid-feedback-custom" id="emailError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Please enter a valid email address (e.g. name@domain.com).
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="phoneInput">Phone Number</label>
+                      <div class="input-with-icon">
+                        <i class="fa-solid fa-phone input-icon"></i>
+                        <input 
+                          type="tel" 
+                          class="form-control modern-input" 
+                          id="phoneInput" 
+                          placeholder="e.g. 01012345678" 
+                          autocomplete="tel"
+                        />
+                        <i class="fa-solid validation-status-icon"></i>
+                      </div>
+                      <div class="invalid-feedback-custom" id="phoneError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Please enter a valid phone number (10-15 digits).
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="ageInput">Age</label>
+                      <div class="input-with-icon">
+                        <i class="fa-solid fa-cake-candles input-icon"></i>
+                        <input 
+                          type="number" 
+                          class="form-control modern-input" 
+                          id="ageInput" 
+                          placeholder="18" 
+                          min="10" 
+                          max="100"
+                        />
+                        <i class="fa-solid validation-status-icon"></i>
+                      </div>
+                      <div class="invalid-feedback-custom" id="ageError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Age must be between 10 and 100 years.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="passwordInput">Password</label>
+                      <div class="input-with-icon">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input 
+                          type="password" 
+                          class="form-control modern-input" 
+                          id="passwordInput" 
+                          placeholder="••••••••" 
+                          autocomplete="new-password"
+                        />
+                        <button type="button" class="toggle-password-btn" data-target="passwordInput" aria-label="Toggle password visibility">
+                          <i class="fa-regular fa-eye"></i>
+                        </button>
+                      </div>
+                      <div class="invalid-feedback-custom" id="passwordError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Min 8 chars, at least 1 letter and 1 number.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-floating-custom">
+                      <label for="repasswordInput">Confirm Password</label>
+                      <div class="input-with-icon">
+                        <i class="fa-solid fa-shield-halved input-icon"></i>
+                        <input 
+                          type="password" 
+                          class="form-control modern-input" 
+                          id="repasswordInput" 
+                          placeholder="••••••••" 
+                          autocomplete="new-password"
+                        />
+                        <button type="button" class="toggle-password-btn" data-target="repasswordInput" aria-label="Toggle password visibility">
+                          <i class="fa-regular fa-eye"></i>
+                        </button>
+                      </div>
+                      <div class="invalid-feedback-custom" id="repasswordError">
+                        <i class="fa-solid fa-circle-exclamation me-1"></i>
+                        Passwords do not match.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 text-center mt-4">
+                    <button 
+                      type="submit" 
+                      class="btn btn-primary-gradient px-5 py-3 rounded-pill fw-semibold" 
+                      id="submitContactBtn" 
+                      disabled
+                    >
+                      <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index: 10550;"></div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
 </html>
